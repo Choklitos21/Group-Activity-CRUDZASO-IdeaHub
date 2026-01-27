@@ -1,38 +1,43 @@
-let form = document.getElementById("registerForm");
-let nameInput = document.getElementById("the-name");
-let emailInput = document.getElementById("the-email");
-let passwordInput = document.getElementById("the-password");
+
 
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
+let message = document.querySelector(".message");
 
+// funcion para register
+function register(name,email,password) {
+
+    let exists = users.some(user=>user.email === email);
+    
+    
+    if (exists) {
+        message.textContent = "There is already an account with that email";
+        message.style.color = "red";
+        setTimeout(()=>{ message.textContent = ""},2000)
+        form.reset();
+        return;
+    }
+
+    users.push({name,email,password});
+    localStorage.setItem("users", JSON.stringify(users));
+
+    message.textContent = "account created successfully";
+        message.style.color = "green";
+        setTimeout(()=>{ message.textContent = ""},3000)
+        form.reset();
+
+
+}
+let form = document.getElementById("registerForm");
+// evento para registrar
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    let info = {
-        name : nameInput.value,
-        email : emailInput.value,
-        password : passwordInput.value,
-    }
+    let name = document.getElementById("the-name").value.trim();
+    let email = document.getElementById("the-email").value.trim();
+    let password = document.getElementById("the-password").value.trim();
 
-    let p = document.createElement("p");
+    register(name,email,password);
 
-    let exits = users.some(user=>user.email === info.email);
-
-    form.appendChild(p)
-    if (exits) {
-        p.textContent = "There is already an account with that email";
-        p.style.color = "red";
-        form.reset();
-        return;
-    };
-        users.push(info);
-        localStorage.setItem("users", JSON.stringify(users));
-
-        p.textContent = "account created successfully";
-        p.style.color = "green";
-        setTimeout(()=>{ p.textContent = "", window.location.href = "#"},1500)
-        form.reset();
-        
 
 })

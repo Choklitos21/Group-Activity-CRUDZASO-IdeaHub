@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(238, 238, 238);
+}
+.title{
+    font-size: 38px;
+    font-weight: 500;
+}
+#registerForm label{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container-main{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+
+}
+
+.card{
+    border-radius: 22px;
+    box-shadow:  0px 5px 20px #83828270;
+    padding: 60px;
+}
+
+.form-control{
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #97979742;
+    box-shadow:  0px 1px 2px #83828270;
+    width: 250px;
+}
+.btn-btn{
+        padding: 10px 20px;
+        background: rgb(5, 112, 211);
+        border-radius: 25px;
+        color: black;
+        font-weight: 500 ;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        
+}
+.message{
+    margin-left: 50px;
+    font-size: 15px;
+    text-transform: uppercase;
+}

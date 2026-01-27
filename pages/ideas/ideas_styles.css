@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ------------- */
+.principal-container {
+    width: 100%;
+    height: auto;
+    background-color: #9fa8da1d;
+}
+.principal-container .navbar-container {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.458);
+}
+.navbar-container .title h1 {
+    font-size: 2rem;
+}
+.navbar-container .start-perfil_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+.start-perfil_container button {
+    width: 7rem;
+    padding: .5rem;
+    border-radius: .6rem;
+    border: none;
+    background-color: #9fa8da89;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.start-perfil_container button:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 12px #9fa8dac3;
+}
+.start-perfil_container img {
+    width: 1.6rem;
+}
+.start-perfil_container p {
+    font-size: 1.1rem;
+    color: gray;
+}
+.start-perfil_container .change-theme {
+    width: 2rem;
+    background-color: transparent;
+}
+.start-perfil_container .change-theme:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 12px #9fa8dac3;
+}
+/* ----- EDN NAVBAR ----- */
+
+/* ---------- FORM ---------- */
+.ideas-principal_container {
+    width: 100%;
+    height: auto;
+    padding: 1.4rem;
+    /* background-color: #9fa8da1d; */
+}
+.ideas-principal_container .ideas-container {
+    width: 60%;
+    border: 1.2px solid rgba(128, 128, 128, 0.412);
+    margin: 0 auto;
+    border-radius: .6rem;
+    padding: 1.2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 8px #00000026;
+}
+.ideas-container form {
+    padding: 0.2rem;
+    width: 100%;
+}
+form .content-form {
+    margin-bottom: 1rem;
+}
+.content-form input {
+    width: 59rem;
+    height: 2.8rem;
+    border-radius: .7rem;
+    border: 1px solid rgba(128, 128, 128, 0.458);
+    font-size: 1rem;
+    padding-left: .6rem;
+    outline: none;
+}
+.content-form select {
+    width: 59rem;
+    height: 2.8rem;
+    border-radius: .7rem;
+    border: none;
+    font-size: 1rem;
+    padding-left: .6rem;
+    border-bottom: .5px solid gray;
+}
+.content-form textarea {
+    width: 59rem;
+    height: 6rem;
+    border: 1px solid rgba(128, 128, 128, 0.458);
+    border-radius: .7rem;
+    font-size: 1rem;
+    padding: .6rem;
+    outline: none;
+}
+form .btn_form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+form button {
+    width: 7rem;
+    height: 2.5rem;
+    padding: .5rem;
+    border-radius: .6rem;
+    border: none;
+    background-color: #9fa8da89;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+form button:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 12px #9fa8dac3;
+}
+form button img {
+    width: 1.3rem;
+    margin-right: .4rem;
+}
+/* ----- END FORM ----- */
+
+/* ---------- FILTER SECTION ---------- */
+.filter-principal-container {
+    width: 100%;
+    height: auto;
+    padding: 1.4rem;
+}
+.filter-principal-container .filter-container {
+    width: 60%;
+    border: 1.2px solid rgba(128, 128, 128, 0.412);
+    margin: 0 auto;
+    border-radius: .6rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 1px 8px #00000026;
+}
+.filter-container .filter-content-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.4rem;
+}
+.filter-content-title img {
+    width: 1.3rem;
+    margin-right: .6rem;
+}
+.filter-container .filter-select-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter-select-container .content-author {
+    width: 50%;
+    height: auto;
+}
+.filter-select-container .content-author p {
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    color: gray;
+}
+.filter-select-container .content-author select {
+    width: 90%;
+    height: 2rem;
+    border-radius: .8rem;
+    padding-left: .4rem;
+    font-size: .9rem;
+    color: rgb(78, 77, 77);
+}
+.filter-select-container .content-author select:hover, .filter-select-container .content-category select:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 12px #9fa8dac3;
+}
+.filter-select-container .content-category {
+    width: 50%;
+    height: auto;
+}
+.filter-select-container .content-category p {
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    color: gray;
+}
+.filter-select-container .content-category select {
+    width: 90%;
+    height: 2rem;
+    border-radius: .8rem;
+    padding-left: .4rem;
+    font-size: .9rem;
+    color: rgb(78, 77, 77);
+}
+/*  */
+
+/* --------------- IDEAS CONTAINER --------------- */
+.container-ideas {
+    width: 100%;
+    height: auto;
+    
+}
+.container-ideas .container-card-idea {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-card-idea .card-idea {
+    width: 60%;
+    border-radius: .7rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #00000026;
+    padding: 1rem;
+    background-color: #9fa8da67;
+}
+.card-idea .user {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: .6rem;
+}
+.user img {
+    width: 3.2rem;
+    margin-right: .8rem;
+}
+.user div h2 {
+    font-size: 1.6rem;
+}
+.user div span {
+    font-size: 1.1rem;
+    color: gray;
+}
+/*  */
+.card-idea .etiq {
+    display: flex;
+    margin-bottom: .8rem;
+    width: 7rem;
+    border-radius: .8rem;
+    padding: 0.2rem;
+    border: 1px solid gray;
+}
+.card-idea .etiq img {
+    margin-right: .5rem;
+}
+.card-idea .paragraf-card {
+    width: 90%;
+    text-align: justify;
+    font-size: 1.3rem;
+    margin-bottom: 1.1rem;
+}
+.card-idea hr {
+    width: 90%;
+    border: 0.5px solid gray;
+    margin-bottom: 1rem;
+}
+.card-idea .like {
+    display: flex;
+}
+.card-idea .like img {
+    width: 1rem;
+    margin-right: .5rem;
+}

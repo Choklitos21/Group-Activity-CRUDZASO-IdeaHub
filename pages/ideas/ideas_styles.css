@@ -9,6 +9,23 @@
     height: auto;
     background-color: #9fa8da1d;
 }
+/* --------------------------- cambiar fondo a oscuro */
+.principal-container.dark {
+    background-color: #9fa8dac3;
+}
+form.light {
+    background-color: #9fa8da70
+}
+.ideas-principal_container.dark {
+    background-color: #9fa8dac3;
+}
+.filter-principal-container.dark {
+    background-color: #9fa8dac3;
+}
+.container-ideas.dark {
+    background-color: #9fa8dac3;
+}
+/* -------------------------------------------------- */
 .principal-container .navbar-container {
     width: 100%;
     height: 5rem;
@@ -25,6 +42,9 @@
     justify-content: center;
     align-items: center;
     gap: 1.4rem;
+}
+.start-perfil_container .perfil {
+    background-color: transparent;
 }
 .start-perfil_container button {
     width: 7rem;
@@ -226,25 +246,43 @@ form button img {
     margin-bottom: 1.2rem;
     border: 1px solid #00000026;
     padding: 1rem;
-    background-color: #9fa8da67;
+    background-color: rgba(128, 128, 128, 0.112);
 }
 .card-idea .user {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: .6rem;
+}
+.user .user-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .user img {
     width: 3.2rem;
     margin-right: .8rem;
 }
-.user div h2 {
+.user .user-perfil h2 {
     font-size: 1.6rem;
 }
-.user div span {
+.user .user-perfil span {
     font-size: 1.1rem;
     color: gray;
 }
+.user div .delete-idea {
+    width: 2rem;
+    transition: filter 0.2s ease;
+}
+.user div .delete-idea:hover {
+    filter: invert(18%) sepia(98%) saturate(7465%) hue-rotate(0deg) brightness(95%) contrast(105%);
+    cursor: pointer;
+}
+.user div .delete-btn {
+    background-color: transparent;
+    border: none;
+}
+
 /*  */
 .card-idea .etiq {
     display: flex;
@@ -274,4 +312,8 @@ form button img {
 .card-idea .like img {
     width: 1rem;
     margin-right: .5rem;
+}
+.card-idea .like img:hover {
+    filter: invert(18%) sepia(98%) saturate(7465%) hue-rotate(0deg) brightness(95%) contrast(105%);
+    cursor: pointer;
 }

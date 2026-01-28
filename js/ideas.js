@@ -1,3 +1,16 @@
+// ---- FUNCTION CHANGE THEME
+function ChangeTheme() {
+
+    const content = document.getElementById('ideas-principal_container');
+    const contentfilter = document.getElementById('filter-principal-container');
+    const contentfilterCards = document.getElementById('container-ideas');
+
+    content.classList.toggle('dark')
+    contentfilter.classList.toggle('dark')
+    contentfilterCards.classList.toggle('dark')
+}
+
+// --------------------- // ---------------------
 const form = document.getElementById('form-idea');
 const nameUser = document.getElementById('inputName')
 const title = document.getElementById('inputTitle');
@@ -12,8 +25,6 @@ document.addEventListener('DOMContentLoaded', renderIdeas);
 
 function createIdea(e) {
     e.preventDefault();
-
-    if (!title.value || !description.value) return;
 
     const idea = {
         id: Date.now(),
@@ -38,28 +49,27 @@ function renderIdeas() {
 
         card.innerHTML = `
             <div class="user">
-                <img src="./../../user.png" alt="">
+                <div class="user-perfil">
+                    <img src="./../../user.png" alt="">
+                    <div>
+                        <h2>${idea.name}</h2>
+                        <span>Ahora mismo</span>
+                    </div>
+                </div>
                 <div>
-                    <h2>${idea.name}</h2>
-                    <span>Ahora mismo</span>
+                    <button data-id="${idea.id}" class="delete-btn"><img class="delete-idea" src="./../../borrar.png" alt=""></button>
                 </div>
             </div>
-
             <div class="etiq">
                 <img src="./../../etiqueta.png" style="width: 1rem;" alt=""><span>${idea.category}</span></img>
             </div>
-
-            <div>
-                <h1>${idea.title}</h1><br>
-                <hr>   
-            </div>
-
             <div class="paragraf-card">
-                <p>${idea.description}</p>
+                ${idea.description}
             </div>
-
-            <button data-id="${idea.id}" class="delete-btn">Eliminar</button>
-        `;
+            <hr>
+            <div class="like">
+                <img src="./../../like.png" style="width: 1rem;" alt=""><span>12</span></img>
+            </div>`
 
         containerCardsIdeas.appendChild(card);
     });
@@ -68,3 +78,20 @@ function renderIdeas() {
 function saveStorage() {
     localStorage.setItem('list-ideas', JSON.stringify(ideas));
 }
+
+// --------- ELIMINAR CARD DESDE LA IMAGEN 
+containerCardsIdeas.addEventListener('click', (event) => {
+  const btn = event.target.closest('.delete-btn');
+  
+  if (!btn || !confirm('¿Eliminar esta tarjeta?')) return;
+
+  const id = btn.dataset.id;
+  ideas = ideas.filter(idea => idea.id != id);
+
+  saveStorage();
+  btn.closest('.card-idea').remove();
+});
+
+
+
+

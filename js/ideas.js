@@ -58,11 +58,19 @@ function renderIdeas() {
                 </div>
                 <div>
                     <button data-id="${idea.id}" class="delete-btn"><img class="delete-idea" src="./../../borrar.png" alt=""></button>
+                    <button data-id="${idea.id}" class="edit-btn"><img class="edit-idea" src="./../../editar-texto.png" alt=""></button>
                 </div>
             </div>
             <div class="etiq">
                 <img src="./../../etiqueta.png" style="width: 1rem;" alt=""><span>${idea.category}</span></img>
             </div>
+
+            <div class="title">
+                <h1>${idea.title}</h1>
+            </div>
+
+
+
             <div class="paragraf-card">
                 ${idea.description}
             </div>
@@ -91,6 +99,39 @@ containerCardsIdeas.addEventListener('click', (event) => {
   saveStorage();
   btn.closest('.card-idea').remove();
 });
+
+// ---------------- EDITAR CONTENIDO DE LA CARD
+
+containerCardsIdeas.addEventListener('click', (event) => {
+  
+    const btn = event.target.closest('.edit-btn');
+  if (!btn) return;
+
+  const id = btn.dataset.id;
+  const idea = ideas.find(idea => idea.id == id);
+
+  if (!idea) return;
+
+  nameUser.value = idea.name;
+  title.value = idea.title;
+  description.value = idea.description;
+  category.value = idea.category;
+
+  ideas = ideas.filter(idea => idea.id != id);
+  saveStorage();
+
+  form.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+
+
+
+
+
+
+
+
 
 
 

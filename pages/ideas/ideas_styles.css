@@ -270,6 +270,7 @@ form button img {
     font-size: 1.1rem;
     color: gray;
 }
+/* ----- BOTONES PARA EDITAR Y ELIMINAR -------- */
 .user div .delete-idea {
     width: 2rem;
     transition: filter 0.2s ease;
@@ -282,7 +283,19 @@ form button img {
     background-color: transparent;
     border: none;
 }
+.user div .edit-idea {
+    width: 2rem;
+    transition: filter 0.2s ease;
+}
+.user div .edit-idea:hover {
+    filter: invert(32%) sepia(96%) saturate(2200%) hue-rotate(200deg) brightness(95%) contrast(105%);
 
+    cursor: pointer;
+}
+.user div .edit-btn {
+    background-color: transparent;
+    border: none;
+}
 /*  */
 .card-idea .etiq {
     display: flex;

@@ -23,6 +23,7 @@ let ideas = JSON.parse(localStorage.getItem('list-ideas')) || [];
 form.addEventListener('submit', createIdea);
 document.addEventListener('DOMContentLoaded', renderIdeas);
 
+// ----------------- CREAR IDEA
 function createIdea(e) {
     e.preventDefault();
 
@@ -31,7 +32,8 @@ function createIdea(e) {
         name: nameUser.value,
         title: title.value,
         description: description.value,
-        category: category.value
+        category: category.value,
+        like: 0
     };
 
     ideas.push(idea);
@@ -40,6 +42,8 @@ function createIdea(e) {
     form.reset();
 }
 
+
+// ------------------- MOSTRAR IDEA
 function renderIdeas() {
     containerCardsIdeas.innerHTML = "";
 
@@ -68,15 +72,12 @@ function renderIdeas() {
             <div class="title">
                 <h1>${idea.title}</h1>
             </div>
-
-
-
             <div class="paragraf-card">
                 ${idea.description}
             </div>
             <hr>
             <div class="like">
-                <img src="./../../like.png" style="width: 1rem;" alt=""><span>12</span></img>
+                <img src="./../../like.png" class="like-btn" data-id="${idea.id}" style="width: 1rem;" alt=""><span>${idea.like}</span></img>
             </div>`
 
         containerCardsIdeas.appendChild(card);
@@ -121,6 +122,22 @@ containerCardsIdeas.addEventListener('click', (event) => {
   saveStorage();
 
   form.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+// --------- LIKE POR CARD 
+containerCardsIdeas.addEventListener('click', (event) => {
+    
+    const btn = event.target.closest('.like-btn');
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+    const idea = ideas.find(idea => idea.id == id);
+    if (!idea) return;
+
+    idea.like++; 
+    saveStorage();
+    renderIdeas();
 });
 
 

@@ -7,6 +7,7 @@ let theForm = document.querySelector(".the-form");
 if(form){form.addEventListener("submit", register)};  
 if(theForm){theForm.addEventListener("submit", login)}
 
+
 // funcion para register
 function register(e) {
     e.preventDefault()
@@ -20,7 +21,10 @@ function register(e) {
     if (exists) {
         message.textContent = "There is already an account with that email";
         message.style.color = "red";
-        setTimeout(()=>{ message.textContent = ""},2000)
+        message.classList.add("error")  
+
+        setTimeout(()=>{ message.textContent = "",
+            message.classList.remove("error");},2000)
         form.reset();
         return;
     }
@@ -32,7 +36,10 @@ function register(e) {
 
     message.textContent = "account created successfully";
         message.style.color = "green";
-        setTimeout(()=>{ message.textContent = ""},3000)
+        message.classList.add("success")
+        setTimeout(()=>{ message.textContent = "";
+        message.classList.remove("success");
+        },3000)
         form.reset();
 
 }
@@ -47,20 +54,25 @@ function login(e) {
     if (!userFound) {
         message.textContent = "invalid data";
         message.style.color = "red";
-        setTimeout(()=>{message.textContent = ""},2000)
+        message.classList.add("error")
+        setTimeout(()=>{
+            message.textContent = "",
+            message.classList.remove("error");
+        },2000);
         theForm.reset();
         return;
     }
 
     message.textContent = "successful login";
     message.style.color = "green";
+    message.classList.add("success")
     setTimeout(()=>{message.textContent = "";
-        window.location.href = "#"},2000);
+        message.classList.remove("success")},2000);
         theForm.reset();
 
     sessionStorage.setItem("loggedUser",emailInput);
-
 }
+
 
 
 

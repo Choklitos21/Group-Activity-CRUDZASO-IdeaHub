@@ -1,53 +1,97 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: rgb(238, 238, 238);
-}
-.title{
-    font-size: 38px;
-    font-weight: 500;
-}
-#registerForm label{
-    font-size: 18px;
-    font-weight: 500;
+    font-family: "Segoe UI", sans-serif;
 }
 
-.container-main{
+.title {
+    font-size: 34px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#registerForm label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.container-main {
     display: flex;
     justify-content: center;
-    height: 100vh;
     align-items: center;
-
+    min-height: 100vh;
 }
 
-.card{
-    border-radius: 22px;
-    box-shadow:  0px 5px 20px #83828270;
-    padding: 60px;
+.card {
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 50px 45px;
+    background: #fff;
+    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 400px;
 }
 
-.form-control{
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid #97979742;
-    box-shadow:  0px 1px 2px #83828270;
-    width: 250px;
+.card:hover {
+    transform: translateY(-3px);
 }
-.btn-btn{
-        padding: 10px 20px;
-        background: rgb(5, 112, 211);
-        border-radius: 25px;
-        color: black;
-        font-weight: 500 ;
-        margin-left: 50px;
-        margin-bottom: 30px;
-        
+
+.form-control {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    transition: 0.2s ease;
 }
-.message{
-    margin-left: 50px;
-    font-size: 15px;
+
+
+.btn-btn {
+    width: 100%;
+    padding: 10px;
+    background: rgb(5, 112, 211);
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+    margin-top: 30px;
+}
+
+
+.btn-btn:hover {
+    background: rgb(20, 126, 224);
+    transform: scale(1.0);
+}
+
+
+.message {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 12px;
     text-transform: uppercase;
+    color: #444;
 }
+.error {
+    color: #b30000;
+    background: #ffd6d6;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ff9a9a;
+}
+.success {
+    color: #155724;
+    background: #d4edda;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #a3d9b1;
+}
+
+

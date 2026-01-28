@@ -2,3 +2,13 @@
     color: rgb(33, 36, 219);
     font-weight: 400;
 }
+hr {
+    color: rgba(201, 199, 199, 0.418);
+}
+article {
+    box-shadow: 0px 0px 3px 3px rgba(139, 139, 139, 0.164);
+}
+
+.card {
+    box-shadow: 3px 3px 3px 3px rgba(102, 101, 101, 0.226);
+}

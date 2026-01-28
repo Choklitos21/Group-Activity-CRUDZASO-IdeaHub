@@ -79,10 +79,10 @@ function saveStorage() {
     localStorage.setItem('list-ideas', JSON.stringify(ideas));
 }
 
-// --------- ELIMINAR CARD DESDE LA IMAGEN 
+// --------- ELIMINAR CARD DESDE LA IMAGEN DE PAPELERA 
 containerCardsIdeas.addEventListener('click', (event) => {
   const btn = event.target.closest('.delete-btn');
-  
+
   if (!btn || !confirm('¿Eliminar esta tarjeta?')) return;
 
   const id = btn.dataset.id;
